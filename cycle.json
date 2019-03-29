@@ -54,7 +54,7 @@
         "source": {
           "docker_file": {
             "dir": "/",
-            "build__file": "/Dockerfile"
+            "build_file": "/Dockerfile"
           }
         }
       },
