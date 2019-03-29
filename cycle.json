@@ -1,0 +1,97 @@
+{
+  "version": "1.0",
+  "about": null,
+  "tests": [],
+  "services": {
+    "loadbalancer": null,
+    "vpn", null
+  },
+  "containers": {
+    "redis": {
+      "name": "redis",
+      "image": {
+        "name": "redis",
+        "source": {
+          "docker_hub": {
+            "target": "redis:latest",
+            "username": ""
+          }
+        }
+      },
+      "config": {
+        "network": {
+          "public": "disable",
+          "hostname": "redis",
+          "ports": [
+            "6379:6379"
+          ]
+        },
+        "deploy": {
+          "instances": 1,
+          "constraints": null,
+          "shutdown": null,
+          "restart": null,
+          "health_check": null
+        },
+        "runtime": {
+          "workdir": null,
+          "command": null,
+          "environment_vars": {
+            "TEST_VAR": "test_var"
+          },
+          "namespaces": null,
+          "capabilities": null,
+          "privileged": false
+        },
+        "scaling": null,
+        "resources": null,
+        "integrations": null
+      },
+      "volumes": []
+    },
+    "web": {
+      "name": "web",
+      "image": {
+        "name": "node",
+        "source": {
+          "docker_file": {
+            "dir": "/",
+            "build__file": "/Dockerfile"
+
+          }
+        }
+      },
+      "config": {
+        "network": {
+          "public": "disable",
+          "hostname": "redis",
+          "ports": [
+            "6379:6379"
+          ]
+        },
+        "deploy": {
+          "instances": 1,
+          "constraints": null,
+          "shutdown": null,
+          "restart": null,
+          "health_check": null
+        },
+        "runtime": {
+          "workdir": null,
+          "command": null,
+          "environment_vars": {
+            "TEST_VAR": "test_var"
+          },
+          "namespaces": null,
+          "capabilities": null,
+          "privileged": false
+        },
+        "scaling": null,
+        "resources": null,
+        "integrations": null
+      },
+      "volumes": []
+    }
+  },
+  "annotations": {}
+}
