@@ -62,7 +62,7 @@
         "network": {
           "public": "disable",
           "hostname": "redis",
-          "ports": ["6379:6379"]
+          "ports": ["8081:8081"]
         },
         "deploy": {
           "instances": 1,
