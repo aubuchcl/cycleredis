@@ -4,7 +4,7 @@
   "tests": [],
   "services": {
     "loadbalancer": null,
-    "vpn", null
+    "vpn": null
   },
   "containers": {
     "redis": {
@@ -22,9 +22,7 @@
         "network": {
           "public": "disable",
           "hostname": "redis",
-          "ports": [
-            "6379:6379"
-          ]
+          "ports": ["6379:6379"]
         },
         "deploy": {
           "instances": 1,
@@ -57,7 +55,6 @@
           "docker_file": {
             "dir": "/",
             "build__file": "/Dockerfile"
-
           }
         }
       },
@@ -65,9 +62,7 @@
         "network": {
           "public": "disable",
           "hostname": "redis",
-          "ports": [
-            "6379:6379"
-          ]
+          "ports": ["6379:6379"]
         },
         "deploy": {
           "instances": 1,
