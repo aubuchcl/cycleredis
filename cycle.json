@@ -35,7 +35,7 @@
           "workdir": null,
           "command": null,
           "environment_vars": {
-            "TEST_VAR": "test_var_one"
+            "TEST_VAR": "test_vaar_one"
           },
           "namespaces": null,
           "capabilities": null,
