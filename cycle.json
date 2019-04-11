@@ -62,7 +62,7 @@
         "network": {
           "public": "enable",
           "hostname": "web",
-          "ports": ["8081:8081"]
+          "ports": ["80:8081"]
         },
         "deploy": {
           "instances": 1,
