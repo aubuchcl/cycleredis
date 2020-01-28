@@ -9,7 +9,7 @@ client.set("visits", 0);
 
 //GLOBALS
 
-PORT = 8081;
+PORT = 80;
 
 app.get("/", (req, res) => {
   client.get("visits", (err, visits) => {
@@ -18,6 +18,6 @@ app.get("/", (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, ":::", () => {
   console.log(`listening ${PORT}`);
 });
