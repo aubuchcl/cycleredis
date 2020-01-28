@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "about": null,
+  "about": "A simple Node app that shows how many times a user has visited a site.  Values are stored in a stateless redis container.",
   "tests": [],
   "services": {
     "loadbalancer": null,
@@ -26,23 +26,73 @@
         },
         "deploy": {
           "instances": 1,
-          "constraints": null,
-          "shutdown": null,
-          "restart": null,
-          "health_check": null
+          "strategy": "first-available",
+          "stateful": null,
+          "constraints": {
+            "node": {
+              "tags": {
+                "any": ["packet"],
+                "all": ["packet", "sjc"]
+              }
+            },
+            "containers": ["web"]
+          },
+          "shutdown": {
+            "graceful_timeout": 30,
+            "signals": [
+              "SIGINT"
+            ]
+          },
+          "startup": {
+            "delay": null,
+            "order": 1
+          },
+          "restart": {
+            "condition": "always",
+            "delay": 2,
+            "max_attempts": 5,
+            "notify": {
+              "emails": ["it_director@yourcompany.com", "youremail@yourcompany.com"],
+              "webhook": "http://endpoint.tohit.ifrestart"
+            }
+          },
+          "health_check": {
+            "command": "redis-server",
+            "retries": 3,
+            "interval": 20,
+            "timeout": 30,
+            "restart": true
+          },
+          "update": {
+            "parallelism": 1,
+            "delay": 1
+          }
+        },
+        "scaling": null
         },
         "runtime": {
-          "workdir": null,
           "command": null,
+          "namespaces": null,
           "environment_vars": {
             "TEST_VAR": "test_vaar_one"
           },
-          "namespaces": null,
+          "privileged": false,
           "capabilities": null,
-          "privileged": false
+          "workdir": null
         },
-        "scaling": null,
-        "resources": null,
+        "resources": {
+          "cpu": {
+            "shares": 2,
+            "cpus": null
+          },
+          "ram": {
+            "limit": null,
+            "reserve": "10M",
+            "swapiness": null,
+            "kernel": "100K",
+            "kernel_tcp": "100K"
+          }
+        },
         "integrations": null
       },
       "volumes": []
@@ -66,27 +116,66 @@
         },
         "deploy": {
           "instances": 1,
+          "strategy": "first-available",
+          "stateful": null,
           "constraints": null,
-          "shutdown": null,
-          "restart": null,
-          "health_check": null
+          "shutdown": {
+            "graceful_timeout": 30,
+            "signals": ["SIGINT"]
+          },
+          "startup": {
+            "delay": 0,
+            "order": 2
+          },
+          "restart": {
+            "condition": "always",
+            "delay": 1,
+            "max_attempts": 7,
+            "notify": {
+              "emails": ["me@mycompany.com"]
+            }
+          },
+          "health_check": {
+            "command": "npm start",
+            "retries": 3,
+            "interval": 5,
+            "timeout": 30,
+            "restart": true
+          },
+          "update": {
+            "parallelism": 1,
+            "delay": 1
+          }
         },
+        "scaling": null,
         "runtime": {
-          "workdir": null,
           "command": null,
+          "namespaces": null,
           "environment_vars": {
             "TEST_VAR": "test_var"
           },
-          "namespaces": null,
+          "privileged": false,
           "capabilities": null,
-          "privileged": false
+          "workdir": null
         },
-        "scaling": null,
-        "resources": null,
+        "resources": {
+          "cpu": {
+            "shares": 2,
+            "cpus": null
+          },
+          "ram": {
+            "limit": null,
+            "reserve": "1M",
+            "swapiness": null,
+            "kernel": "100K",
+            "kernel_tcp": "100K"
+          }
+        },
         "integrations": null
       },
       "volumes": []
-    }
-  },
+    },
   "annotations": {}
 }
+  
+
