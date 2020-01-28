@@ -1,6 +1,9 @@
 {
   "version": "1.0",
-  "about": "A simple Node app that shows how many times a user has visited a site.  Values are stored in a stateless redis container.",
+  "about": {
+    "version": "2020.01.28.01-redis",
+    "description": "An example stack"
+  },
   "tests": [],
   "services": {
     "loadbalancer": null,
