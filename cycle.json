@@ -35,7 +35,7 @@
             "node": {
               "tags": {
                 "any": ["packet"],
-                "all": ["packet", "sjc"]
+                "all": ["packet", "packet-sjc1"]
               }
             },
             "containers": ["web"]
