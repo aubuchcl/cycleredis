@@ -29,7 +29,7 @@
         },
         "deploy": {
           "instances": 1,
-          "strategy": "first-available",
+          "strategy": "resource-density",
           "stateful": null,
           "constraints": {
             "node": {
@@ -117,11 +117,11 @@
         "network": {
           "public": "enable",
           "hostname": "web",
-          "ports": ["80:8081"]
+          "ports": ["80:80", "443:80"]
         },
         "deploy": {
           "instances": 1,
-          "strategy": "first-available",
+          "strategy": "resource-density",
           "stateful": null,
           "constraints": null,
           "shutdown": {
