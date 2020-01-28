@@ -84,7 +84,10 @@
         },
         "resources": {
           "cpu": {
-            "shares": 2,
+            "shares": {
+              "limit": null,
+              "reserve": 1
+            },
             "cpus": null
           },
           "ram": {
@@ -162,7 +165,10 @@
         },
         "resources": {
           "cpu": {
-            "shares": 2,
+            "shares": {
+              "limit": null,
+              "reserve": 1
+            },
             "cpus": null
           },
           "ram": {
