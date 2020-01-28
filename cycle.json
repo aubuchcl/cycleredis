@@ -52,7 +52,7 @@
           },
           "restart": {
             "condition": "always",
-            "delay": 2,
+            "delay": 5,
             "max_attempts": 5,
             "notify": {
               "emails": ["it_director@yourcompany.com", "youremail@yourcompany.com"],
@@ -134,7 +134,7 @@
           },
           "restart": {
             "condition": "always",
-            "delay": 1,
+            "delay": 5,
             "max_attempts": 7,
             "notify": {
               "emails": ["me@mycompany.com"]
