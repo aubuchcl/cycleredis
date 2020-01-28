@@ -71,8 +71,7 @@
             "delay": 1
           }
         },
-        "scaling": null
-        },
+        "scaling": null,
         "runtime": {
           "command": null,
           "namespaces": null,
@@ -177,7 +176,8 @@
         "integrations": null
       },
       "volumes": []
-    },
+    }
+  },
   "annotations": {}
 }
   
