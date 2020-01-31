@@ -92,10 +92,10 @@
           },
           "ram": {
             "limit": null,
-            "reserve": "10M",
+            "reserve": "100M",
             "swapiness": null,
-            "kernel": "100K",
-            "kernel_tcp": "100K"
+            "kernel": "10M",
+            "kernel_tcp": "10M"
           }
         },
         "integrations": null
@@ -173,10 +173,10 @@
           },
           "ram": {
             "limit": null,
-            "reserve": "1M",
+            "reserve": "100M",
             "swapiness": null,
-            "kernel": "100K",
-            "kernel_tcp": "100K"
+            "kernel": "10M",
+            "kernel_tcp": "10M"
           }
         },
         "integrations": null
