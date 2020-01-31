@@ -94,8 +94,8 @@
             "limit": null,
             "reserve": "100M",
             "swapiness": null,
-            "kernel": "10M",
-            "kernel_tcp": "10M"
+            "kernel": null,
+            "kernel_tcp": null
           }
         },
         "integrations": null
@@ -175,8 +175,8 @@
             "limit": null,
             "reserve": "100M",
             "swapiness": null,
-            "kernel": "10M",
-            "kernel_tcp": "10M"
+            "kernel": null,
+            "kernel_tcp": null
           }
         },
         "integrations": null
