@@ -59,13 +59,7 @@
               "webhook": "http://endpoint.tohit.ifrestart"
             }
           },
-          "health_check": {
-            "command": "redis-server",
-            "retries": 3,
-            "interval": 20,
-            "timeout": 30,
-            "restart": true
-          },
+          "health_check": null,
           "update": {
             "parallelism": 1,
             "delay": 1
@@ -140,13 +134,7 @@
               "emails": ["me@mycompany.com"]
             }
           },
-          "health_check": {
-            "command": "npm start",
-            "retries": 3,
-            "interval": 10,
-            "timeout": 30,
-            "restart": true
-          },
+          "health_check": null,
           "update": {
             "parallelism": 1,
             "delay": 1
