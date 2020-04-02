@@ -1,8 +1,8 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "about": {
-    "version": "2020.01.28.01-redis",
-    "description": "An example stack"
+    "version": "test one",
+    "description": "test one description"
   },
   "tests": [],
   "services": {
