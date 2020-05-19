@@ -34,8 +34,8 @@
           "constraints": {
             "node": {
               "tags": {
-                "any": ["packet"],
-                "all": ["packet"]
+                "any": [],
+                "all": []
               }
             },
             "containers": ["web"]
