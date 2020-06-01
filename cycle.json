@@ -1,8 +1,8 @@
 {
   "version": "1.3",
   "about": {
-    "version": "test three",
-    "description": "test three description"
+    "version": "1.2.3",
+    "description": "test branch"
   },
   "tests": [],
   "services": {
@@ -42,9 +42,7 @@
           },
           "shutdown": {
             "graceful_timeout": 30,
-            "signals": [
-              "SIGINT"
-            ]
+            "signals": ["SIGINT"]
           },
           "startup": {
             "delay": null,
@@ -55,7 +53,10 @@
             "delay": 5,
             "max_attempts": 5,
             "notify": {
-              "emails": ["it_director@yourcompany.com", "youremail@yourcompany.com"],
+              "emails": [
+                "it_director@yourcompany.com",
+                "youremail@yourcompany.com"
+              ],
               "webhook": "http://endpoint.tohit.ifrestart"
             }
           },
@@ -174,5 +175,3 @@
   },
   "annotations": {}
 }
-  
-
