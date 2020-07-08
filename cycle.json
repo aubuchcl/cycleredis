@@ -69,7 +69,7 @@
         "runtime": {
           "rlimits": {
             "RLIMIT_NOFILE": {
-              "hard": 150000
+              "hard": 150000,
               "soft": 100000
             }
           },
