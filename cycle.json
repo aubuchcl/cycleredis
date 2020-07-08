@@ -67,6 +67,12 @@
         },
         "scaling": null,
         "runtime": {
+          "rlimits": {
+            "RLIMIT_NOFILE": {
+              "hard": 150000
+              "soft": 100000
+            }
+          },
           "command": null,
           "namespaces": null,
           "environment_vars": {
