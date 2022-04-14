@@ -3,7 +3,9 @@ const redis = require("redis");
 
 const app = express();
 const client = redis.createClient({
-  host: "http://redis.cycle"
+  host: "redis",
+  port: "6379",
+  family: "IPv6"
 });
 client.set("visits", 0);
 
