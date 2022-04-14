@@ -1,23 +1,14 @@
 {
-  "version": "1.3",
-  "about": {
-    "version": "test three",
-    "description": "test three description"
-  },
-  "tests": [],
-  "services": {
-    "loadbalancer": null,
-    "vpn": null
-  },
+  "version": "1.0",
   "containers": {
     "redis": {
       "name": "redis",
       "image": {
         "name": "redis",
-        "source": {
-          "docker_hub": {
-            "target": "redis:latest",
-            "username": ""
+        "origin": {
+          "type": "docker-hub",
+          "details": {
+            "target": "redis:latest"
           }
         }
       },
@@ -28,87 +19,18 @@
           "ports": ["6379:6379"]
         },
         "deploy": {
-          "instances": 1,
-          "strategy": "resource-density",
-          "stateful": null,
-          "constraints": {
-            "node": {
-              "tags": {
-                "any": [],
-                "all": []
-              }
-            },
-            "containers": ["web"]
-          },
-          "shutdown": {
-            "graceful_timeout": 30,
-            "signals": [
-              "SIGINT"
-            ]
-          },
-          "startup": {
-            "delay": null,
-            "order": 1
-          },
-          "restart": {
-            "condition": "always",
-            "delay": 5,
-            "max_attempts": 5,
-            "notify": {
-              "emails": ["it_director@yourcompany.com", "youremail@yourcompany.com"],
-              "webhook": "http://endpoint.tohit.ifrestart"
-            }
-          },
-          "health_check": null,
-          "update": {
-            "parallelism": 1,
-            "delay": 1
-          }
-        },
-        "scaling": null,
-        "runtime": {
-          "rlimits": {
-            "RLIMIT_NOFILE": {
-              "hard": 150000,
-              "soft": 100000
-            }
-          },
-          "command": null,
-          "namespaces": null,
-          "environment_vars": {
-            "TEST_VAR": "test_vaar_one"
-          },
-          "privileged": false,
-          "capabilities": null,
-          "workdir": null
-        },
-        "resources": {
-          "cpu": {
-            "shares": {
-              "limit": null,
-              "reserve": 1
-            },
-            "cpus": null
-          },
-          "ram": {
-            "limit": null,
-            "reserve": "100M",
-            "swapiness": null,
-            "kernel": null,
-            "kernel_tcp": null
-          }
-        },
-        "integrations": null
-      },
-      "volumes": []
+          "instances": 1
+        }
+      }
     },
-    "web": {
-      "name": "web",
+    "demo": {
+      "name": "demo",
       "image": {
-        "name": "node",
-        "source": {
-          "docker_file": {
-            "dir": "/",
+        "name": "frontend",
+        "origin": {
+          "type": "docker-file",
+          "details": {
+            "context_dir": "/",
             "build_file": "/Dockerfile"
           }
         }
@@ -116,69 +38,13 @@
       "config": {
         "network": {
           "public": "enable",
-          "hostname": "web",
+          "hostname": "frontend",
           "ports": ["80:80", "443:80"]
         },
         "deploy": {
-          "instances": 1,
-          "strategy": "resource-density",
-          "stateful": null,
-          "constraints": null,
-          "shutdown": {
-            "graceful_timeout": 30,
-            "signals": ["SIGINT"]
-          },
-          "startup": {
-            "delay": 0,
-            "order": 2
-          },
-          "restart": {
-            "condition": "always",
-            "delay": 5,
-            "max_attempts": 7,
-            "notify": {
-              "emails": ["me@mycompany.com"]
-            }
-          },
-          "health_check": null,
-          "update": {
-            "parallelism": 1,
-            "delay": 1
-          }
-        },
-        "scaling": null,
-        "runtime": {
-          "command": null,
-          "namespaces": null,
-          "environment_vars": {
-            "TEST_VAR": "test_var"
-          },
-          "privileged": false,
-          "capabilities": null,
-          "workdir": null
-        },
-        "resources": {
-          "cpu": {
-            "shares": {
-              "limit": null,
-              "reserve": 1
-            },
-            "cpus": null
-          },
-          "ram": {
-            "limit": null,
-            "reserve": "100M",
-            "swapiness": null,
-            "kernel": null,
-            "kernel_tcp": null
-          }
-        },
-        "integrations": null
-      },
-      "volumes": []
+          "instances": 1
+        }
+      }
     }
-  },
-  "annotations": {}
+  }
 }
-  
-
